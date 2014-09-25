@@ -123,6 +123,13 @@
 {
 	static NSString *kCellID = @"CellIdentifier";
     
+/*
+ * Search results tableview is created by search display controller and
+  * doesn't know about the prototype table view cell we registered in the storyboard.
+  * This means that if we ask the search results table view to create a cell with CellIdentifier
+   * it returns nil
+* The best workaround is to always use the original table view to instantiate the table view cell
+  */
     // Dequeue a cell from self's table view.
 	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellID];
     
