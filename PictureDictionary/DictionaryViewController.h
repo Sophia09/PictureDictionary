@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DictionaryViewController : UIViewController
+@interface DictionaryViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @end

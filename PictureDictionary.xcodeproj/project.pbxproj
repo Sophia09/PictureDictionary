@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78AD1B9719C8024900BD21A7 /* tater.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AD1B9619C8024900BD21A7 /* tater.png */; };
+		78CA65FB19D2A94F00EF8A95 /* SecondCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */; };
 		78CC457419C6B24400C665C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CC457319C6B24400C665C3 /* Foundation.framework */; };
 		78CC457619C6B24400C665C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CC457519C6B24400C665C3 /* CoreGraphics.framework */; };
 		78CC457819C6B24400C665C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CC457719C6B24400C665C3 /* UIKit.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78AD1B9619C8024900BD21A7 /* tater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tater.png; sourceTree = "<group>"; };
+		78CA65F919D2A94F00EF8A95 /* SecondCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondCategoryViewController.h; sourceTree = "<group>"; };
+		78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondCategoryViewController.m; sourceTree = "<group>"; };
 		78CC457019C6B24400C665C3 /* PictureDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CC457319C6B24400C665C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78CC457519C6B24400C665C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78AD1B9419C7CEED00BD21A7 /* appDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				78CC458219C6B24400C665C3 /* DictionaryAppDelegate.h */,
+				78CC458319C6B24400C665C3 /* DictionaryAppDelegate.m */,
+			);
+			name = appDelegate;
+			sourceTree = "<group>";
+		};
+		78AD1B9519C7CEF800BD21A7 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				78CC458819C6B24400C665C3 /* DictionaryViewController.h */,
+				78CC458919C6B24400C665C3 /* DictionaryViewController.m */,
+				78CA65F919D2A94F00EF8A95 /* SecondCategoryViewController.h */,
+				78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */,
+			);
+			name = viewControllers;
+			sourceTree = "<group>";
+		};
 		78CC456719C6B24400C665C3 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +137,9 @@
 		78CC457919C6B24400C665C3 /* PictureDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				78CC458219C6B24400C665C3 /* DictionaryAppDelegate.h */,
-				78CC458319C6B24400C665C3 /* DictionaryAppDelegate.m */,
+				78AD1B9519C7CEF800BD21A7 /* viewControllers */,
+				78AD1B9419C7CEED00BD21A7 /* appDelegate */,
 				78CC458519C6B24400C665C3 /* Main.storyboard */,
-				78CC458819C6B24400C665C3 /* DictionaryViewController.h */,
-				78CC458919C6B24400C665C3 /* DictionaryViewController.m */,
 				78CC458B19C6B24400C665C3 /* Images.xcassets */,
 				78CC457A19C6B24400C665C3 /* Supporting Files */,
 			);
@@ -126,6 +149,7 @@
 		78CC457A19C6B24400C665C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				78AD1B9619C8024900BD21A7 /* tater.png */,
 				78CC457B19C6B24400C665C3 /* PictureDictionary-Info.plist */,
 				78CC457C19C6B24400C665C3 /* InfoPlist.strings */,
 				78CC457F19C6B24400C665C3 /* main.m */,
@@ -229,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78AD1B9719C8024900BD21A7 /* tater.png in Resources */,
 				78CC458C19C6B24400C665C3 /* Images.xcassets in Resources */,
 				78CC457E19C6B24400C665C3 /* InfoPlist.strings in Resources */,
 				78CC458719C6B24400C665C3 /* Main.storyboard in Resources */,
@@ -252,6 +277,7 @@
 			files = (
 				78CC458419C6B24400C665C3 /* DictionaryAppDelegate.m in Sources */,
 				78CC458019C6B24400C665C3 /* main.m in Sources */,
+				78CA65FB19D2A94F00EF8A95 /* SecondCategoryViewController.m in Sources */,
 				78CC458A19C6B24400C665C3 /* DictionaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +487,7 @@
 				78CC45A419C6B24400C665C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78CC45A519C6B24400C665C3 /* Build configuration list for PBXNativeTarget "PictureDictionaryTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +496,7 @@
 				78CC45A719C6B24400C665C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

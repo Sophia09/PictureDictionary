@@ -1,21 +1,190 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hCA-UW-j8Y">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Tab Bar Controller-->
+        <scene sceneID="4b0-Es-XhW">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="DictionaryViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hCA-UW-j8Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" alpha="0.80000000000000027" contentMode="scaleToFill" translucent="NO" id="ydK-Yb-Tx5">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Flp-Ra-d9C" kind="relationship" relationship="viewControllers" id="Wis-Ac-cWL"/>
+                        <segue destination="eWh-n5-0OC" kind="relationship" relationship="viewControllers" id="NGh-zL-adj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5PR-RB-J6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-251" y="39"/>
+        </scene>
+        <!--Navigation Controller - First-->
+        <scene sceneID="vxP-FP-tCA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Flp-Ra-d9C" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="First" id="Kl3-bV-k4m"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="7Hv-EN-QfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TDB-LI-8ut" kind="relationship" relationship="rootViewController" id="bgE-GN-Oss"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEV-7X-Fo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="-368"/>
+        </scene>
+        <!--Dictionary View Controller - 图解单词-->
+        <scene sceneID="eeS-ac-YaS">
+            <objects>
+                <tableViewController id="TDB-LI-8ut" customClass="DictionaryViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PD7-W3-dsS">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="OFC-cV-vL1">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="TDB-LI-8ut" id="AhP-K5-C3I"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" textLabel="0aF-p4-PsR" style="IBUITableViewCellStyleDefault" id="cIR-Ae-0PE">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cIR-Ae-0PE" id="Cl4-5c-PLr">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0aF-p4-PsR">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TDB-LI-8ut" id="jIL-yi-1N8"/>
+                            <outlet property="delegate" destination="TDB-LI-8ut" id="40s-OM-hTN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="图解单词" id="udf-CW-7EQ"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="FXz-3E-dqa" id="jDh-Kp-D4Q"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4RT-od-pDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="FXz-3E-dqa">
+                    <connections>
+                        <outlet property="delegate" destination="TDB-LI-8ut" id="C7O-cH-3D6"/>
+                        <outlet property="searchBar" destination="OFC-cV-vL1" id="rns-lH-8DX"/>
+                        <outlet property="searchContentsController" destination="TDB-LI-8ut" id="ydI-Zs-glL"/>
+                        <outlet property="searchResultsDataSource" destination="TDB-LI-8ut" id="QZG-pR-UzQ"/>
+                        <outlet property="searchResultsDelegate" destination="TDB-LI-8ut" id="dzJ-0j-S6q"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1176" y="-405"/>
+        </scene>
+        <!--Navigation Controller - Second-->
+        <scene sceneID="Ror-Hf-2gc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eWh-n5-0OC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Second" id="SGC-xU-fgj" userLabel="Tab Bar Item -Second"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="EiD-Qg-N4S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ie0-OT-xnC" kind="relationship" relationship="rootViewController" id="iBs-s4-keW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sem-HH-7UN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="606"/>
+        </scene>
+        <!--Second Category View Controller - Second Category-->
+        <scene sceneID="qUm-99-qMg">
+            <objects>
+                <tableViewController id="Ie0-OT-xnC" customClass="SecondCategoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rJQ-xN-Oc4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="uZj-bN-SBC">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Ie0-OT-xnC" id="avm-zA-zaH"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="lmp-fe-B6K" style="IBUITableViewCellStyleDefault" id="wSL-GJ-buy">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wSL-GJ-buy" id="Bwc-Mh-ofD">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lmp-fe-B6K">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ie0-OT-xnC" id="pm6-TT-Are"/>
+                            <outlet property="delegate" destination="Ie0-OT-xnC" id="8WS-Ek-8QR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Second Category" id="lmP-4Z-0A6"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="JOy-hd-W28" id="U3g-hU-B81"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rkd-if-q2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="JOy-hd-W28">
+                    <connections>
+                        <outlet property="delegate" destination="Ie0-OT-xnC" id="5iY-7n-6eD"/>
+                        <outlet property="searchBar" destination="uZj-bN-SBC" id="NjA-NJ-Rqt"/>
+                        <outlet property="searchContentsController" destination="Ie0-OT-xnC" id="6kr-fD-3Yh"/>
+                        <outlet property="searchResultsDataSource" destination="Ie0-OT-xnC" id="tgD-JL-gQ3"/>
+                        <outlet property="searchResultsDelegate" destination="Ie0-OT-xnC" id="fI3-5X-WeG"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1214" y="606"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
