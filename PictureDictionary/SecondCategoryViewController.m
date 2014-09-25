@@ -96,8 +96,8 @@
     {
         return nil;
     }
-    NSMutableArray *sectionIndexTitles = [NSMutableArray arrayWithArray:self.sectionTitles];
-    [sectionIndexTitles insertObject:UITableViewIndexSearch atIndex:0];
+    NSMutableArray *sectionIndexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+    [sectionIndexTitles addObjectsFromArray:self.sectionTitles];
     return sectionIndexTitles;
 }
 
@@ -107,6 +107,8 @@
     {
         return 0;
     }
+    // When the table view requests the section that corresponds to the search icon
+    // in the index we return not found and fore the table view to scroll to the top
     if (index == 0)
     {
         [self.tableView setContentOffset:CGPointZero animated:YES];

@@ -73,15 +73,17 @@
         return nil;
     }
     // Display a magnifying glass icon as the first title
-    NSMutableArray *sectionIndexTitles = [NSMutableArray arrayWithArray:self.sectionTitles];
-    [sectionIndexTitles insertObject:UITableViewIndexSearch atIndex:0];
+    NSMutableArray *sectionIndexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+    [sectionIndexTitles addObjectsFromArray:self.sectionTitles];
+
     return sectionIndexTitles;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
-    // Returns the section that the table view should scroll to for the given index title
+    // When the table view requests the section that corresponds to the search icon
+    // in the index we return not found and fore the table view to scroll to the top
     if (index == 0)
     {
         [self.tableView setContentOffset:CGPointZero animated:YES];
