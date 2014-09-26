@@ -8,6 +8,15 @@
 
 #import "DictionaryViewController.h"
 
+@implementation NSString (Contains)
+
+- (BOOL)containsString:(NSString *)otherString
+{
+    return ([self rangeOfString:otherString options:NSCaseInsensitiveSearch].location != NSNotFound);
+}
+
+@end
+
 @interface DictionaryViewController ()
 
 @property (nonatomic, strong) NSMutableArray *searchResults;
@@ -26,8 +35,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.products = [NSMutableArray arrayWithArray:@[@"MacBook Pro", @"MacBook Air", @"iPhone 5S", @"iPhone 6", @"Dell", @"Lenovo", @"HP", @"Haier", @"Asus"]];
     
-    self.searchResults = [NSMutableArray arrayWithArray:@[@"searchResult1", @"searchResult2", @"searchResult3"]];
-    
+    self.searchResults = [NSMutableArray arrayWithCapacity:0];
     [self prepareDatasource];
     
     //    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tater.png"]];
@@ -46,6 +54,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    NSLog(@"DictionaryViewController dealloc");
 }
 
 #pragma mark - UITableView data source and delegate methods
@@ -161,6 +174,15 @@
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     // Return YES to cause the search result table view to be reloaded.
+    [self.searchResults removeAllObjects];
+    
+   [self.products enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+    {
+       if ([(NSString *)obj containsString:searchString])
+       {
+           [self.searchResults addObject:obj];
+       }
+    }];
     return YES;
 }
 
