@@ -39,7 +39,7 @@
     self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];
     self.collation = [UILocalizedIndexedCollation currentCollation];
     
-//    self.searchBar.backgroundImage = [UIImage new];
+    self.searchBar.backgroundImage = [UIImage new];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +63,9 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+    NSMutableArray *sectionIndexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+    [sectionIndexTitles addObjectsFromArray:[[UILocalizedIndexedCollation currentCollation] sectionIndexTitles]];
+    return sectionIndexTitles;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -71,10 +73,14 @@
     return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
-sectionForSectionIndexTitle:(NSString *)title
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title
                atIndex:(NSInteger)index
 {
+    if (index == 0)
+    {
+        [tableView setContentOffset:CGPointZero animated:YES];
+        return NSNotFound;
+    }
     return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
 }
 
