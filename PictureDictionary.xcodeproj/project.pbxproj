@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78AD1B9719C8024900BD21A7 /* tater.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AD1B9619C8024900BD21A7 /* tater.png */; };
+		78AF636A19D3BA06006B1DD4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF636919D3BA06006B1DD4 /* TestViewController.m */; };
 		78CA65FB19D2A94F00EF8A95 /* SecondCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */; };
 		78CC457419C6B24400C665C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CC457319C6B24400C665C3 /* Foundation.framework */; };
 		78CC457619C6B24400C665C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CC457519C6B24400C665C3 /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		78AD1B9619C8024900BD21A7 /* tater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tater.png; sourceTree = "<group>"; };
+		78AF636819D3BA06006B1DD4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		78AF636919D3BA06006B1DD4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		78CA65F919D2A94F00EF8A95 /* SecondCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondCategoryViewController.h; sourceTree = "<group>"; };
 		78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondCategoryViewController.m; sourceTree = "<group>"; };
 		78CC457019C6B24400C665C3 /* PictureDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +103,8 @@
 				78CC458919C6B24400C665C3 /* DictionaryViewController.m */,
 				78CA65F919D2A94F00EF8A95 /* SecondCategoryViewController.h */,
 				78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */,
+				78AF636819D3BA06006B1DD4 /* TestViewController.h */,
+				78AF636919D3BA06006B1DD4 /* TestViewController.m */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				78CC458019C6B24400C665C3 /* main.m in Sources */,
 				78CA65FB19D2A94F00EF8A95 /* SecondCategoryViewController.m in Sources */,
 				78CC458A19C6B24400C665C3 /* DictionaryViewController.m in Sources */,
+				78AF636A19D3BA06006B1DD4 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
