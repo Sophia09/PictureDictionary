@@ -38,7 +38,8 @@
     self.searchResults = [NSMutableArray arrayWithCapacity:0];
     [self prepareDatasource];
     
-    //    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tater.png"]];
+    // Make the border of status bar invisible
+    self.searchDisplayController.searchBar.backgroundImage = [UIImage new];
     
     // set colour for table view index
     self.tableView.sectionIndexColor = [UIColor lightGrayColor];

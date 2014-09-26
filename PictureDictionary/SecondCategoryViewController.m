@@ -39,28 +39,9 @@
     self.tableView.sectionIndexColor = [UIColor grayColor];
     self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];
     
-    self.familyNameDictionary = [[NSMutableDictionary alloc] init];
-    self.sectionTitles = [[NSMutableArray alloc] init];
+    self.searchDisplayController.searchBar.backgroundImage = [UIImage new];
     
-    NSArray *originalDatasource = @[@"Li", @"Wang", @"Zhao", @"Qian", @"Sun", @"Xi", @"Yan", @"Bao", @"Ding", @"Zhang", @"Meng", @"Su"];
-    NSArray *sortedDatasource  = [originalDatasource sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [(NSString *)obj1 compare:(NSString *)obj2];
-    }];
-    
-    [sortedDatasource enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSString *firstLetter = [[NSString stringWithFormat:@"%c", [obj characterAtIndex:0]] uppercaseString];
-        
-        NSMutableArray *nameList = [self.familyNameDictionary objectForKey:firstLetter];
-        if (!nameList)
-        {
-            nameList = [[NSMutableArray alloc] init];
-            [self.familyNameDictionary setObject:nameList forKey:firstLetter];
-             [self.sectionTitles addObject:firstLetter];
-        }
-        [nameList addObject:obj];
-    }];
-    
-    self.searchResults = [NSMutableArray arrayWithArray:@[@"Ha", @"Hei"]];
+    [self prepareDatasource];
 }
 
 - (void)didReceiveMemoryWarning
@@ -210,7 +191,36 @@
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     // Return YES to cause the search result table view to be reloaded.
+   
     return YES;
+}
+
+#pragma mark - Helper Methods
+
+- (void)prepareDatasource
+{
+    self.familyNameDictionary = [[NSMutableDictionary alloc] init];
+    self.sectionTitles = [[NSMutableArray alloc] init];
+    
+    NSArray *originalDatasource = @[@"Li", @"Wang", @"Zhao", @"Qian", @"Sun", @"Xi", @"Yan", @"Bao", @"Ding", @"Zhang", @"Meng", @"Su"];
+    NSArray *sortedDatasource  = [originalDatasource sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(NSString *)obj1 compare:(NSString *)obj2];
+    }];
+    
+    [sortedDatasource enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString *firstLetter = [[NSString stringWithFormat:@"%c", [obj characterAtIndex:0]] uppercaseString];
+        
+        NSMutableArray *nameList = [self.familyNameDictionary objectForKey:firstLetter];
+        if (!nameList)
+        {
+            nameList = [[NSMutableArray alloc] init];
+            [self.familyNameDictionary setObject:nameList forKey:firstLetter];
+            [self.sectionTitles addObject:firstLetter];
+        }
+        [nameList addObject:obj];
+    }];
+    
+    self.searchResults = [NSMutableArray arrayWithArray:@[@"Ha", @"Hei"]];
 }
 
 @end
