@@ -11,8 +11,8 @@
 @interface TestViewController ()
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-
 @property (nonatomic, strong) UILocalizedIndexedCollation *collation;
+@property (nonatomic, strong) NSString *cellContent;
 
 @end
 
@@ -40,6 +40,8 @@
     self.collation = [UILocalizedIndexedCollation currentCollation];
     
     self.searchBar.backgroundImage = [UIImage new];
+    
+    self.cellContent = @"Original";
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,6 +98,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = self.cellContent;
     
     return cell;
 }
@@ -159,6 +162,14 @@
     return YES;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if ([searchText length] != 0)
+    {
+        self.cellContent = searchText;
+        [self.tableView reloadData];
+    }    
+}
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {

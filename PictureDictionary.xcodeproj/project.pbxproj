@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		785A90761A008EC50038851C /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785A90751A008EC50038851C /* TitleViewController.m */; };
 		78AD1B9719C8024900BD21A7 /* tater.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AD1B9619C8024900BD21A7 /* tater.png */; };
 		78AF636A19D3BA06006B1DD4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF636919D3BA06006B1DD4 /* TestViewController.m */; };
 		78CA65FB19D2A94F00EF8A95 /* SecondCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		785A90741A008EC50038851C /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
+		785A90751A008EC50038851C /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		78AD1B9619C8024900BD21A7 /* tater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tater.png; sourceTree = "<group>"; };
 		78AF636819D3BA06006B1DD4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		78AF636919D3BA06006B1DD4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				78CA65FA19D2A94F00EF8A95 /* SecondCategoryViewController.m */,
 				78AF636819D3BA06006B1DD4 /* TestViewController.h */,
 				78AF636919D3BA06006B1DD4 /* TestViewController.m */,
+				785A90741A008EC50038851C /* TitleViewController.h */,
+				785A90751A008EC50038851C /* TitleViewController.m */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78CC458419C6B24400C665C3 /* DictionaryAppDelegate.m in Sources */,
+				785A90761A008EC50038851C /* TitleViewController.m in Sources */,
 				78CC458019C6B24400C665C3 /* main.m in Sources */,
 				78CA65FB19D2A94F00EF8A95 /* SecondCategoryViewController.m in Sources */,
 				78CC458A19C6B24400C665C3 /* DictionaryViewController.m in Sources */,

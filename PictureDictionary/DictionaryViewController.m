@@ -49,6 +49,8 @@
     
     //    self.collation = [UILocalizedIndexedCollation currentCollation];
     
+    NSDate *today = [NSDate date];
+    NSLog(@"today = %@", [today description]);    
 }
 
 - (void)didReceiveMemoryWarning
